@@ -33,13 +33,13 @@ const AddToCart = ({ prod, toggleModal }) => {
       alert("Please select Shades!!");
     } else {
       let prodData = { ...prod, price: shade.price, quant, shades: shade };
-      let index = cartList.findIndex((ind) => ind._id == prodData._id);
+      let index = cartList.findIndex((ind) => ind._id === prodData._id);
       console.log("index", index);
       let shd = cartList.filter((sh) => sh);
       let checkShd = shd.some((s) => s.shades.img === prodData.shades.img);
       console.log("checkShd", checkShd);
 
-      if (index != -1 && checkShd === true) {
+      if (index !== -1 && checkShd === true) {
         cartList[index] = prodData;
       } else {
         cartList.push(prodData);
@@ -71,7 +71,7 @@ const AddToCart = ({ prod, toggleModal }) => {
           <div className="relative p-6 grid grid-cols-2">
             {/* <div className="flex flex-col justify-end max-w-sm rounded overflow-hidden shadow-xl"> */}
             <div className="">
-              <img className="w-36" src={prod.img} />
+              <img className="w-36" src={prod.img} alt="product" />
             </div>
             <div className="flex justify-between flex-col px-5 py-3">
               {/* <div className="font-bold text-xl mb-3">{prod.name}</div> */}
@@ -104,7 +104,7 @@ const AddToCart = ({ prod, toggleModal }) => {
                         key={shd.id}
                         onClick={() => getShades(shd, quant)}
                       >
-                        <img className="w-8" src={shd.img} />
+                        <img className="w-8" src={shd.img} alt="shades" />
                       </button>
                     );
                   })}

@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Popularity = ({ onClick }) => {
   return (
@@ -24,6 +26,7 @@ const Popularity = ({ onClick }) => {
         <polyline points="13 16 17 20 21 16" />{" "}
         <line x1="17" y1="10" x2="17" y2="20" />
       </svg>
+      <FontAwesomeIcon icon={faBars} />
     </button>
   );
 };
