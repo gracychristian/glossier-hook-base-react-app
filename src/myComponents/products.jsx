@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { getProducts } from "../services/productsService";
+import React, { useEffect, useState } from "react";
+import { getAllProducts, getProducts } from "../services/productsService";
 import Cards from "../myComponents/common/card";
 import SearchProd from "./common/search";
 import Popularity from "./common/sortPopularity";
@@ -39,6 +39,10 @@ const Products = () => {
     }
     setSearchField("");
   };
+
+  useEffect(() => {
+    getAllProducts().then((res) => console.log('res', res))
+  })
 
   return (
     <>

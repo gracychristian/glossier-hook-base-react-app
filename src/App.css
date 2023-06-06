@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -40,4 +41,17 @@
 .td-span {
   display: flex;
   justify-content: center;
+}
+
+.error {
+  position: absolute;
+  color: red;
+  font-size: 0.6rem;
+}
+
+.signup {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
